@@ -14,8 +14,8 @@ class Avtale:
 
 #e
     def __str__(self):
-        return f'avtalen title er: {self.title} \navtalen sted er: {self.sted} \navtelen satrtpunkt er: {self.starttidspunkt} \navtalen varighet er: {self.varighet} '
-
+        #return f'avtalen title er: {self.title} \navtalen sted er: {self.sted} \navtelen satrtpunkt er: {self.starttidspunkt} \navtalen varighet er: {self.varighet} '
+        return f'{self.title}, {self.sted}, {self.starttidspunkt}, {self.varighet}'
 #f
 def ny_avtale():
     while True:
@@ -78,10 +78,11 @@ def sjekkstring(liste, string1) :
     return avtaler_tittle_str
 
 
+
 if __name__== '__main__':
     avtale = Avtale('saiksbiko', 'London', data_objekt , 50 )
     print(avtale)
-    print(ny_avtale())
+    #print(ny_avtale())
     enListe = [Avtale('Gineve', 'Italy', data_objekt, 59)]
     toList = [Avtale('Oavtale', 'Oslo', data_objekt1, 40)]
     treListe = [Avtale('Belfor', 'Britin', data_objekt2, 89)]
@@ -93,3 +94,51 @@ if __name__== '__main__':
     sjekkdato(enListe, data_objekt)
     sjekkstring(enListe,'Gineve')
 
+#l#m#n
+
+
+
+
+def meny_system():
+    print(' Velg en av de alternativer:\n a.lese inn avtaler fra fil\n b.Skrive avtalene til fil\n c.Skrive inn en ny avtale\n d.Skrive ut alle avtalene\n e.slett en avtale\n f.rediger en avtale\n g.Avslutt')
+    meny_valg = List
+    while True:
+        brukeren_valg = input('velg en av de alternativer:')
+        if brukeren_valg == 'a':
+            print('du har valgt a')
+            lese_filliste()
+        elif brukeren_valg == 'b':
+            print('du har valgt b')
+            lager_liste(enListe)
+        elif brukeren_valg == 'c':
+            print('du har valgt c')
+            ny_avtale()
+        elif brukeren_valg == 'd':
+            print('du har valgt d')
+            skriveut_liste(enListe)
+        elif brukeren_valg == 'e':
+            print(List)
+            valg_slett = int(input('hvilken avtalen har du lyst å slette.Skriv indexen til avtale:'))
+            List.pop(valg_slett)
+            print(meny_valg)
+        elif brukeren_valg =='f':
+            print('du har valgt f')
+            rediger_avtale()
+
+        else:
+            if brukeren_valg == 'g':
+                print('avsluet')
+                break
+
+
+def rediger_avtale():
+    skriveut_liste(List)
+    valg = int(input("Velg avtale å redigere"))
+    List[valg] = ny_avtale()
+    return skriveut_liste(List)
+
+
+
+
+meny_system()
+rediger_avtale()
