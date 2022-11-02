@@ -69,6 +69,14 @@ def sjekkdato(liste, dato) :
             avtaler_på_sammedato.append(avtaler)
         return avtaler_på_sammedato
 
+#k
+def sjekkstring(liste, string1) :
+    avtaler_tittle_str = []
+    for avtaler in liste:
+        if avtaler.title.find(string1) != -1:
+            avtaler_tittle_str.append(avtaler)
+    return avtaler_tittle_str
+
 
 if __name__== '__main__':
     avtale = Avtale('saiksbiko', 'London', data_objekt , 50 )
@@ -83,3 +91,5 @@ if __name__== '__main__':
     lager_liste(List)
     lese_filliste()
     sjekkdato(enListe, data_objekt)
+    sjekkstring(enListe,'Gineve')
+
